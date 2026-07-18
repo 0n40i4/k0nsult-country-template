@@ -1,0 +1,9 @@
+k0nsult-country-template — scaffold for a K0NSULT per-country transparency layer
+Copyright 2026 K0NSULT / 0n40i4
+Licensed under the Apache License, Version 2.0 (see LICENSE).
+
+This repository is a TEMPLATE: it describes how any EU Member State (or other
+jurisdiction) instantiates the K0NSULT national transparency layer, using
+k0nsult-country-pl as the reference implementation. It ships no live surfaces.
+
+DOCTRINE: claim <= proof; Human Override Always; agents-not-people.
