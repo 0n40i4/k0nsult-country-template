@@ -2,10 +2,10 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
   "$profile": "cyclonedx-lite (podzbior: bez services/vulnerabilities/compositions)",
-  "serialNumber": "urn:uuid:b76c6040-8696-4dd6-93fc-55b2433d956a",
+  "serialNumber": "urn:uuid:e6f02ea4-93c4-4d83-91f9-6fb1c975750f",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-18T21:29:33.549Z",
+    "timestamp": "2026-07-19T08:52:10.013Z",
     "tools": [
       {
         "vendor": "K0NSULT",
@@ -34,11 +34,39 @@
       },
       {
         "name": "k0nsult:stats",
-        "value": "{\"total\":3,\"files_html\":0,\"data_json\":0,\"code_files\":0,\"other_files\":3,\"node_libraries\":0}"
+        "value": "{\"total\":5,\"files_html\":0,\"data_json\":0,\"code_files\":0,\"other_files\":5,\"node_libraries\":0}"
       }
     ]
   },
   "components": [
+    {
+      "type": "file",
+      "bom-ref": "surface:INSTANTIATION-CHECKLIST.md",
+      "name": "INSTANTIATION-CHECKLIST.md",
+      "group": "other",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "6ffd09f20c43a7eb39d695274e2b340fd4f254002716946b08c4bda7aceafeb9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "INSTANTIATION-CHECKLIST.md"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "10129"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
     {
       "type": "file",
       "bom-ref": "surface:LICENSE",
@@ -116,6 +144,34 @@
         {
           "name": "k0nsult:bytes",
           "value": "1541"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:surfaces/README.md",
+      "name": "README.md",
+      "group": "other",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "18910b3532a775adcc0919a728cbdd249b21113e9534e0a51af21263b0382293"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/README.md"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "4550"
         },
         {
           "name": "k0nsult:surface",
