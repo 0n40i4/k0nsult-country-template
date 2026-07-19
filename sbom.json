@@ -2,10 +2,10 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
   "$profile": "cyclonedx-lite (podzbior: bez services/vulnerabilities/compositions)",
-  "serialNumber": "urn:uuid:e6f02ea4-93c4-4d83-91f9-6fb1c975750f",
+  "serialNumber": "urn:uuid:3936c5fa-a9b1-4c7c-99fc-69aef2dba9f3",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-19T08:52:10.013Z",
+    "timestamp": "2026-07-19T19:34:39.903Z",
     "tools": [
       {
         "vendor": "K0NSULT",
@@ -17,7 +17,14 @@
       "type": "application",
       "bom-ref": "k0nsult-opensource-surface",
       "name": "K0NSULT open-source surface (ai-truth / uni0nai / ipIII)",
-      "version": "1.0.0"
+      "version": "1.0.0",
+      "licenses": [
+        {
+          "license": {
+            "id": "Apache-2.0"
+          }
+        }
+      ]
     },
     "properties": [
       {
@@ -29,8 +36,8 @@
         "value": "all files under root (recursive, excl. .git/node_modules) + node deps"
       },
       {
-        "name": "k0nsult:license_proposed",
-        "value": "Apache-2.0 (patrz LICENSE.proposed)"
+        "name": "k0nsult:license",
+        "value": "Apache-2.0"
       },
       {
         "name": "k0nsult:stats",
@@ -77,7 +84,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "3359ea11b3bdde09d47f03740e257cdcefbb1a0161878cb792aa5863e5d83269"
+          "content": "b44e41deed1d991b2ba132410c77a44ec459f5fd18d65a347962fbef4f559c4a"
         }
       ],
       "properties": [
@@ -87,7 +94,7 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "11357"
+          "value": "11348"
         },
         {
           "name": "k0nsult:surface",
@@ -105,7 +112,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "4d611f9fdf20a4fcad065817250307bbb70920ac22d943af984b28ad131fc341"
+          "content": "46307c968d38369f94566ff9bf661363fd16e8469a4ce8f97eebf513a7c012cb"
         }
       ],
       "properties": [
@@ -115,7 +122,7 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "478"
+          "value": "502"
         },
         {
           "name": "k0nsult:surface",
