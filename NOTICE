@@ -6,4 +6,4 @@ This repository is a TEMPLATE: it describes how any EU Member State (or other
 jurisdiction) instantiates the K0NSULT national transparency layer, using
 k0nsult-country-pl as the reference implementation. It ships no live surfaces.
 
-DOCTRINE: claim <= proof; Human Override Always; agents-not-people.
+DOCTRINE: claim <= proof; Human Override Always; agents-not-people (no scoring of persons).
