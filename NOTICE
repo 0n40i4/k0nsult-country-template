@@ -6,4 +6,9 @@ This repository is a TEMPLATE: it describes how any EU Member State (or other
 jurisdiction) instantiates the K0NSULT national transparency layer, using
 k0nsult-country-pl as the reference implementation. It ships no live surfaces.
 
+NOT INCLUDED: the proprietary k0nsult.cloud engine; secrets/keys (No Password
+  Custody); the ipIII evidence-attestation module — a COMMERCIAL product currently
+  for sale, NOT open-sourced and NOT covered by the Apache-2.0 grant here
+  (open-source only conditionally, if unsold — operator Human Override).
+
 DOCTRINE: claim <= proof; Human Override Always; agents-not-people (no scoring of persons).
