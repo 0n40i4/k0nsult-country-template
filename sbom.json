@@ -2,15 +2,15 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
   "$profile": "cyclonedx-lite (podzbior: bez services/vulnerabilities/compositions)",
-  "serialNumber": "urn:uuid:73b8fc07-a33c-4260-ae8d-39f4d6c9fc6c",
+  "serialNumber": "urn:uuid:332683ce-6c95-4306-8054-1f896afd2d97",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-20T02:31:20.061Z",
+    "timestamp": "2026-07-20T13:33:30.773Z",
     "tools": [
       {
         "vendor": "K0NSULT",
         "name": "sbom.mjs",
-        "version": "1.0.0"
+        "version": "1.1.0"
       }
     ],
     "component": {
@@ -36,16 +36,52 @@
         "value": "all files under root (recursive, excl. .git/node_modules) + node deps"
       },
       {
+        "name": "k0nsult:hash_basis",
+        "value": "lf-normalized text (matches fresh clone with .gitattributes eol=lf); binary raw"
+      },
+      {
         "name": "k0nsult:license",
         "value": "Apache-2.0"
       },
       {
         "name": "k0nsult:stats",
-        "value": "{\"total\":5,\"files_html\":0,\"data_json\":0,\"code_files\":0,\"other_files\":5,\"node_libraries\":0}"
+        "value": "{\"total\":6,\"files_html\":0,\"data_json\":0,\"code_files\":0,\"other_files\":6,\"node_libraries\":0}"
       }
     ]
   },
   "components": [
+    {
+      "type": "file",
+      "bom-ref": "surface:.gitattributes",
+      "name": ".gitattributes",
+      "group": "other",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fe3074d71e7f356a7b0e8525c7b249c1bc4e803a72a2d3e29df06335e79ea1c6"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": ".gitattributes"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "127"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
     {
       "type": "file",
       "bom-ref": "surface:INSTANTIATION-CHECKLIST.md",
@@ -67,6 +103,10 @@
         {
           "name": "k0nsult:bytes",
           "value": "10129"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
         },
         {
           "name": "k0nsult:surface",
@@ -97,6 +137,10 @@
           "value": "11348"
         },
         {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
           "name": "k0nsult:surface",
           "value": "open-source"
         }
@@ -125,6 +169,10 @@
           "value": "537"
         },
         {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
           "name": "k0nsult:surface",
           "value": "open-source"
         }
@@ -140,7 +188,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "c59d7bf857fa26f3b8a7154f98689db6485297d881379f3307224074802c5315"
+          "content": "be4a6f655204780f78d1d1597a64a966c2fd6793930994c544017f3702a27bb8"
         }
       ],
       "properties": [
@@ -150,7 +198,11 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "1541"
+          "value": "1622"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
         },
         {
           "name": "k0nsult:surface",
@@ -179,6 +231,10 @@
         {
           "name": "k0nsult:bytes",
           "value": "4550"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
         },
         {
           "name": "k0nsult:surface",
