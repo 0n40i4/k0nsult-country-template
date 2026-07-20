@@ -2,10 +2,10 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
   "$profile": "cyclonedx-lite (podzbior: bez services/vulnerabilities/compositions)",
-  "serialNumber": "urn:uuid:5c3d10bd-8bf4-48c9-8a51-14b3b1dcadcd",
+  "serialNumber": "urn:uuid:73b8fc07-a33c-4260-ae8d-39f4d6c9fc6c",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-19T20:26:23.905Z",
+    "timestamp": "2026-07-20T02:31:20.061Z",
     "tools": [
       {
         "vendor": "K0NSULT",
