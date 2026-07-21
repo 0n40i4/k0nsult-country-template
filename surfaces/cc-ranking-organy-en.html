@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE — k0nsult-country-template / surfaces/cc-ranking-organy-en.html
+  English twin of cc-ranking-organy.html. Rename to <cc>-ranking-organy-en.html and replace every
+  double-brace token. The twin MUST carry identical data to the national-language page — only the
+  language of the surrounding text differs. Placeholder inventory: surfaces/README.md.
+  No external dependencies: no CDN, no web fonts, no trackers — the page works offline.
+  Doctrine: claim <= proof; institutions/agents are ranked, NEVER natural persons.
+-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060b06">
+  <title>AI Readiness Ranking: central authorities — {{COUNTRY_NAME}} | EN</title>
+  <meta name="description" content="AI readiness ranking across the central administration of {{COUNTRY_NAME}}: ministries and central authorities. Source: {{DATA_SOURCE}}. Status: controlled research.">
+  <link rel="canonical" href="{{CANONICAL_URL_EN}}" />
+  <link rel="alternate" hreflang="{{LANG}}" href="{{CANONICAL_URL}}" />
+  <link rel="alternate" hreflang="en" href="{{CANONICAL_URL_EN}}" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{PUBLISHER_NAME}}">
+  <meta property="og:locale" content="en">
+  <meta property="og:title" content="AI Readiness Ranking: central authorities — {{COUNTRY_NAME}} | EN">
+  <meta property="og:description" content="AI readiness ranking across the central administration of {{COUNTRY_NAME}}. Source: {{DATA_SOURCE}}. Status: controlled research.">
+  <meta property="og:url" content="{{CANONICAL_URL_EN}}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="AI Readiness Ranking: central authorities — {{COUNTRY_NAME}} | EN">
+  <meta name="twitter:description" content="AI readiness ranking across the central administration of {{COUNTRY_NAME}}. Source: {{DATA_SOURCE}}. Status: controlled research.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"AI Readiness Ranking: central authorities — {{COUNTRY_NAME}} | EN","description":"AI readiness ranking across the central administration of {{COUNTRY_NAME}}. Source: {{DATA_SOURCE}}.","url":"{{CANONICAL_URL_EN}}","inLanguage":"en","isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"{{PUBLISHER_NAME}}","url":"{{SITE_BASE_URL}}"},"publisher":{"@type":"Organization","name":"{{PUBLISHER_NAME}}","url":"{{SITE_BASE_URL}}","identifier":"{{PUBLISHER_ID}}"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{SITE_BASE_URL}}/"},{"@type":"ListItem","position":2,"name":"ai-truth","item":"{{SITE_BASE_URL}}/ai-truth"},{"@type":"ListItem","position":3,"name":"ranking-organy","item":"{{CANONICAL_URL}}"},{"@type":"ListItem","position":4,"name":"en","item":"{{CANONICAL_URL_EN}}"}]}}
+  </script>
+  <style>
+    :root{--bg:#060b06;--bg2:#0a0f0a;--panel:#0e160e;--border:#1a2e1a;--border2:#243c24;
+      --phosphor:#39ff14;--phosphor3:#166b0a;--amber:#ffb700;--red:#ff3333;--cyan:#00e5ff;
+      --text:#c8e8c8;--text2:#8ab08a;--text3:#4a6a4a;--font-mono:'JetBrains Mono','Share Tech Mono','Courier New',monospace;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-mono);line-height:1.6;padding:0 0 4rem;font-size:15px}
+    a{color:var(--cyan);text-decoration:underline}
+    .wrap{max-width:880px;margin:0 auto;padding:0 1.2rem}
+    header{border-bottom:1px solid var(--border);background:var(--bg2);padding:1rem 0;margin-bottom:2rem;position:sticky;top:0;z-index:5}
+    header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+    .brand{color:var(--phosphor);font-weight:700}.brand span{color:var(--text3);font-weight:400}
+    nav a{color:var(--text2);margin-left:1.1rem;font-size:13px}
+    .crumb{color:var(--text3);font-size:12px;margin-bottom:.8rem}
+    h1{color:var(--phosphor);font-size:1.6rem;margin-bottom:.5rem}
+    h2{color:var(--text);font-size:1.1rem;margin:2rem 0 .8rem;padding-bottom:.4rem;border-bottom:1px dashed var(--border2)}
+    p{margin:.6rem 0}.lede{color:var(--text2);margin:.6rem 0 1.2rem}
+    table{width:100%;border-collapse:collapse;margin:1rem 0;font-size:13px}
+    th,td{border:1px solid var(--border2);padding:.45rem .6rem;text-align:left;vertical-align:top}
+    th{background:var(--bg2);color:var(--text2)}
+    td.w{text-align:right;color:var(--amber);width:60px}
+    td.c{text-align:center;width:90px}
+    .badge{display:inline-block;font-size:11px;padding:.15rem .5rem;border-radius:3px;border:1px solid var(--phosphor3);color:var(--phosphor);background:rgba(57,255,20,.06)}
+    .badge.gap{border-color:var(--amber);color:var(--amber);background:rgba(255,183,0,.06)}
+    .src{font-size:12px;color:var(--text3);margin:.4rem 0 0}
+    .triad{border:1px solid var(--border2);border-radius:4px;background:var(--panel);padding:.9rem 1.1rem;margin:1.4rem 0;font-size:13px;color:var(--text2)}
+    .triad b{color:var(--cyan)}
+    .legend{border:1px solid var(--border);border-radius:4px;background:var(--bg2);padding:.9rem 1.1rem;margin:1.4rem 0;font-size:12.5px}
+    .legend h3{color:var(--text);font-size:.95rem;margin-bottom:.5rem}
+    .legend ul{list-style:none;padding:0}.legend li{margin:.3rem 0}
+    .disclaimer{border:1px solid var(--amber);border-radius:4px;background:rgba(255,183,0,.05);padding:.9rem 1.1rem;margin:1.6rem 0;font-size:13px}
+    .disclaimer b{color:var(--amber)}
+    footer{margin-top:3rem;border-top:1px solid var(--border);padding-top:1rem;color:var(--text3);font-size:12px}
+    footer .ver{color:var(--phosphor3)}
+    .scrollx{overflow-x:auto}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">{{PUBLISHER_NAME}}<span>&nbsp;//&nbsp;ai-truth/ranking-organy &middot; EN</span></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/ai-truth">/ai-truth</a>
+        <a href="{{CANONICAL_URL}}" hreflang="{{LANG}}">{{LANG_LABEL}}</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="crumb">ai-truth / ranking-organy / {{COUNTRY_CODE}} / en</div>
+    <h1>Ranking — central authorities ({{COUNTRY_NAME}})</h1>
+    <p class="lede">An overview of AI implementation readiness across the ministries and central
+      authorities of {{COUNTRY_NAME}}. The data come from {{DATA_SOURCE}}, based on public sources:
+      the official government portal, public information registers, internal acts, parliamentary
+      questions and industry media. Statuses marked <span class="badge gap">GAP</span> indicate the
+      absence of hard evidence in the source dataset — they are not conjecture.</p>
+
+    <div class="triad">
+      <b>not a certification</b> &middot; <b>not a notified body</b> &middot; <b>not a legal conclusion</b><br>
+      Research material. It does not constitute a certification, a conformity assessment by a
+      notified body, or a binding legal opinion. The roles and legal bases indicated require
+      evidentiary verification.
+    </div>
+
+    <h2>Ministries / central authorities — readiness ranking</h2>
+    <p>Status: <span class="badge">DATA</span> &nbsp;|&nbsp; data rows: <b>{{ROW_COUNT}}</b>.
+      The "Readiness %" column is the aggregate assessment of implementation maturity (0–100) under
+      the method stated in {{DATA_SOURCE}}. A percentage is evidence only if its denominator and
+      method are stated — keep both visible.</p>
+    <div class="scrollx">
+    <table>
+      <caption class="src" style="caption-side:bottom;text-align:left">Institutions only — no natural persons are scored on this surface.</caption>
+      <thead><tr>
+        <th class="c" scope="col">#</th>
+        <th scope="col">Authority</th>
+        <th scope="col">Type</th>
+        <th scope="col">What was implemented / AI</th>
+        <th class="w" scope="col">Readiness %</th>
+        <th scope="col">Status</th>
+      </tr></thead>
+      <tbody>
+        <!-- Repeat one <tr> per authority — the SAME rows, in the same order, as the
+             national-language twin. Diverging data between the twins is a defect. -->
+        <tr>
+          <td class="c">1</td>
+          <td>{{AUTHORITY_NAME}}</td>
+          <td>{{AUTHORITY_TYPE}}</td>
+          <td>{{AUTHORITY_IMPLEMENTATION}}</td>
+          <td class="w">{{READINESS_SCORE}}</td>
+          <td>{{AUTHORITY_STATUS}}</td>
+        </tr>
+        <tr>
+          <td class="c">2</td>
+          <td>{{AUTHORITY_NAME}}</td>
+          <td>{{AUTHORITY_TYPE}}</td>
+          <td>{{AUTHORITY_IMPLEMENTATION}}</td>
+          <td class="w">{{READINESS_SCORE}}</td>
+          <td><span class="badge gap">GAP</span> no public confirmation in scope</td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="src">Source: <b>{{DATA_SOURCE}}</b> (compiled {{SNAPSHOT_DATE}}). Scope of public
+      sources: {{DATA_SCOPE}}.</p>
+
+    <div class="legend">
+      <h3>Status legend</h3>
+      <ul>
+        <li><span class="badge">DATA</span> — the table is filled with real rows taken directly from the source dataset.</li>
+        <li><span class="badge gap">GAP</span> — field/entry without hard evidence in the source; labelled instead of invented.</li>
+        <li><b>implementation / pilot</b> — a tool launched or tested, confirmed by a public statement or document.</li>
+        <li><b>team / coordination / governance</b> — a team, coordinator or policy exists, without a fully deployed tool.</li>
+        <li><b>strategy / concept / analysis</b> — a direction-setting document, report or expert study without production deployment.</li>
+        <li><b>no hard evidence / to verify</b> — no public confirmation; control entry.</li>
+      </ul>
+    </div>
+
+    <div class="disclaimer">
+      <b>claim &le; proof.</b>
+      Entries with a low readiness score and the status "no hard evidence / to verify" are not
+      presented as deployments — they mean there is no public confirmation within the examined scope
+      and require a freedom-of-information request or a register query. They are not presented as facts.
+    </div>
+
+    <div class="disclaimer">
+      <b>Disclaimer.</b> Informational and research material. Not a certification and not a legal
+      conclusion (not a certification &middot; not a notified body &middot; not a legal conclusion).
+      <a href="/legal/not-certification">/legal/not-certification</a>.
+    </div>
+
+    <footer>
+      {{PUBLISHER_NAME}} · {{PUBLISHER_ID}}<br>
+      <span class="ver">{{SURFACE_ID}} · {{VERSION}} · {{SNAPSHOT_DATE}} · status: controlled research</span>
+    </footer>
+  </div>
+</body>
+</html>

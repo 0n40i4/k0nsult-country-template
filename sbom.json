@@ -2,10 +2,10 @@
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
   "$profile": "cyclonedx-lite (podzbior: bez services/vulnerabilities/compositions)",
-  "serialNumber": "urn:uuid:539b8ef1-2dee-48a8-b863-564994949c2d",
+  "serialNumber": "urn:uuid:e140ca93-0e8c-4196-9f83-3de86f82be9b",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-07-20T16:49:51.087Z",
+    "timestamp": "2026-07-21T16:38:52.616Z",
     "tools": [
       {
         "vendor": "K0NSULT",
@@ -45,7 +45,7 @@
       },
       {
         "name": "k0nsult:stats",
-        "value": "{\"total\":7,\"files_html\":0,\"data_json\":0,\"code_files\":0,\"other_files\":7,\"node_libraries\":0}"
+        "value": "{\"total\":14,\"files_html\":5,\"data_json\":0,\"code_files\":0,\"other_files\":9,\"node_libraries\":0}"
       }
     ]
   },
@@ -84,6 +84,38 @@
     },
     {
       "type": "file",
+      "bom-ref": "surface:.github/workflows/verify.yml",
+      "name": "verify.yml",
+      "group": "other",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "8406b6124728e2d134271756c519ac50ad0f0a76d30bee9960782cb47cc98046"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": ".github/workflows/verify.yml"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "1546"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "bom-ref": "surface:INSTANTIATION-CHECKLIST.md",
       "name": "INSTANTIATION-CHECKLIST.md",
       "group": "other",
@@ -92,7 +124,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "6ffd09f20c43a7eb39d695274e2b340fd4f254002716946b08c4bda7aceafeb9"
+          "content": "44cee2911347428364de52841d2d4e9f5beb168293cb9f4e34197a4f9c92b943"
         }
       ],
       "properties": [
@@ -102,7 +134,39 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "10129"
+          "value": "13664"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:KNOWN-LIMITATIONS.md",
+      "name": "KNOWN-LIMITATIONS.md",
+      "group": "other",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "54d95fff507992dc6a9abcb48ee6c59ca74915e8e283501c922353839eb8a76d"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "KNOWN-LIMITATIONS.md"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "1509"
         },
         {
           "name": "k0nsult:eol",
@@ -188,7 +252,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "be4a6f655204780f78d1d1597a64a966c2fd6793930994c544017f3702a27bb8"
+          "content": "27599f2b4c5e75aa9a6a35e31aee88c01be362ed6c616fdbbe27515b840eea1f"
         }
       ],
       "properties": [
@@ -198,7 +262,7 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "1622"
+          "value": "3275"
         },
         {
           "name": "k0nsult:eol",
@@ -244,6 +308,166 @@
     },
     {
       "type": "file",
+      "bom-ref": "surface:surfaces/cc-kraj.html",
+      "name": "cc-kraj.html",
+      "group": "html",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "2a277bc5f92c9b04eb05ff47469d8075b77902adac7e6deb22ed657abe5cbd4c"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/cc-kraj.html"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "18667"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:surfaces/cc-min-cyfryzacji.html",
+      "name": "cc-min-cyfryzacji.html",
+      "group": "html",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "bd8bff389417d02f9fadada130dbec146666ad02427d152fab9f85e03eeec927"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/cc-min-cyfryzacji.html"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "24134"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:surfaces/cc-panstwo.html",
+      "name": "cc-panstwo.html",
+      "group": "html",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "fff54d4964e55bad3fc39db92ee8707b1f090310ad5e8bba16bf001bc3a0c5e8"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/cc-panstwo.html"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "22190"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:surfaces/cc-ranking-organy-en.html",
+      "name": "cc-ranking-organy-en.html",
+      "group": "html",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "c5af556ba785d78a28457ae4f7a155fc4f5987722e577dd7acff23d8e35057a9"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/cc-ranking-organy-en.html"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "10772"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
+      "bom-ref": "surface:surfaces/cc-ranking-organy.html",
+      "name": "cc-ranking-organy.html",
+      "group": "html",
+      "version": "1.0.0",
+      "scope": "required",
+      "hashes": [
+        {
+          "alg": "SHA-256",
+          "content": "1057215c65998326f852753a66304001eac3ecc3a7885483d77e6525f4e3dec2"
+        }
+      ],
+      "properties": [
+        {
+          "name": "k0nsult:path",
+          "value": "surfaces/cc-ranking-organy.html"
+        },
+        {
+          "name": "k0nsult:bytes",
+          "value": "10744"
+        },
+        {
+          "name": "k0nsult:eol",
+          "value": "lf-normalized"
+        },
+        {
+          "name": "k0nsult:surface",
+          "value": "open-source"
+        }
+      ]
+    },
+    {
+      "type": "file",
       "bom-ref": "surface:surfaces/README.md",
       "name": "README.md",
       "group": "other",
@@ -252,7 +476,7 @@
       "hashes": [
         {
           "alg": "SHA-256",
-          "content": "18910b3532a775adcc0919a728cbdd249b21113e9534e0a51af21263b0382293"
+          "content": "50b169144ec1fc5f12dd73b5a057043d064bafc6bac7e0600b7edaed1f1882ba"
         }
       ],
       "properties": [
@@ -262,7 +486,7 @@
         },
         {
           "name": "k0nsult:bytes",
-          "value": "4550"
+          "value": "11893"
         },
         {
           "name": "k0nsult:eol",

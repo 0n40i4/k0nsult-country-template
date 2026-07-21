@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE — k0nsult-country-template / surfaces/cc-kraj.html
+  Rename to <cc>-kraj.html (<cc> = ISO 3166-1 alpha-2, lower-case) and replace every
+  double-brace token. Placeholder inventory: surfaces/README.md. Steps: ../INSTANTIATION-CHECKLIST.md.
+  No external dependencies: no CDN, no web fonts, no trackers — the page works offline.
+  Doctrine: claim <= proof; only agents/institutions are scored, never natural persons.
+-->
+<html lang="{{LANG}}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#060b06">
+  <title>{{COUNTRY_NAME}} — country detail | AI Act readiness</title>
+  <meta name="description" content="Country detail for {{COUNTRY_NAME}} ({{COUNTRY_CODE}}): national competent authority, regulatory sandbox and the national law implementing Regulation (EU) 2024/1689 (AI Act). Sourced data, evidence-first.">
+  <link rel="canonical" href="{{CANONICAL_URL}}" />
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{PUBLISHER_NAME}}">
+  <meta property="og:locale" content="{{OG_LOCALE}}">
+  <meta property="og:title" content="{{COUNTRY_NAME}} — country detail | AI Act readiness">
+  <meta property="og:description" content="National competent authority, regulatory sandbox and national implementing law for {{COUNTRY_NAME}} ({{COUNTRY_CODE}}) under Regulation (EU) 2024/1689.">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{COUNTRY_NAME}} — country detail | AI Act readiness">
+  <meta name="twitter:description" content="National competent authority, regulatory sandbox and national implementing law for {{COUNTRY_NAME}} ({{COUNTRY_CODE}}) under Regulation (EU) 2024/1689.">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"{{COUNTRY_NAME}} — country detail | AI Act readiness","description":"National competent authority, regulatory sandbox and national implementing law for {{COUNTRY_NAME}} ({{COUNTRY_CODE}}) under Regulation (EU) 2024/1689.","url":"{{CANONICAL_URL}}","inLanguage":"{{LANG}}","isAccessibleForFree":true,"isPartOf":{"@type":"WebSite","name":"{{PUBLISHER_NAME}}","url":"{{SITE_BASE_URL}}"},"publisher":{"@type":"Organization","name":"{{PUBLISHER_NAME}}","url":"{{SITE_BASE_URL}}","identifier":"{{PUBLISHER_ID}}"},"breadcrumb":{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"{{SITE_BASE_URL}}/"},{"@type":"ListItem","position":2,"name":"ai-truth","item":"{{SITE_BASE_URL}}/ai-truth"},{"@type":"ListItem","position":3,"name":"country","item":"{{CANONICAL_URL}}"}]}}
+  </script>
+  <style>
+    :root{
+      --bg:#060b06; --bg2:#0a0f0a; --panel:#0e160e; --border:#1a2e1a; --border2:#243c24;
+      --phosphor:#39ff14; --phosphor3:#166b0a; --amber:#ffb700; --red:#ff3333; --cyan:#00e5ff;
+      --text:#c8e8c8; --text2:#8ab08a; --text3:#4a6a4a;
+      --font-mono:'JetBrains Mono','Share Tech Mono','Courier New',monospace;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-mono);line-height:1.65;
+      padding:0 0 4rem;font-size:15px;-webkit-font-smoothing:antialiased}
+    a{color:var(--cyan);text-decoration:underline}
+    a:hover{text-decoration:underline}
+    .wrap{max-width:980px;margin:0 auto;padding:0 1.2rem}
+    header{border-bottom:1px solid var(--border);background:var(--bg2);padding:1rem 0;margin-bottom:2rem;
+      position:sticky;top:0;z-index:5}
+    header .wrap{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap}
+    .brand{color:var(--phosphor);font-weight:700;letter-spacing:.5px}
+    .brand span{color:var(--text3);font-weight:400}
+    nav a{color:var(--text2);margin-left:1.1rem;font-size:13px}
+    .crumb{color:var(--text3);font-size:12px;margin-bottom:.8rem}
+    h1{color:var(--phosphor);font-size:1.85rem;line-height:1.22;margin-bottom:.5rem;letter-spacing:.3px}
+    h2{color:var(--text);font-size:1.18rem;margin:2.6rem 0 .8rem;padding-bottom:.4rem;
+      border-bottom:1px dashed var(--border2)}
+    h2 .n{color:var(--phosphor3);font-weight:400}
+    h3{color:var(--phosphor);font-size:1rem;margin-bottom:.35rem}
+    p{margin:.7rem 0;color:var(--text)}
+    .lede{color:var(--text2);font-size:1.04rem;margin:.6rem 0 1.4rem}
+    .badges{display:flex;gap:.6rem;flex-wrap:wrap;margin:1.2rem 0}
+    .badge{border:1px solid var(--border2);background:var(--panel);padding:.3rem .7rem;border-radius:3px;
+      font-size:12px;color:var(--amber)}
+    .badge.green{color:var(--phosphor);border-color:var(--phosphor3)}
+    .badge.cyan{color:var(--cyan);border-color:#135}
+    .badge.red{color:var(--red);border-color:#511}
+    .panel{background:var(--panel);border:1px solid var(--border);border-radius:4px;padding:1.1rem 1.2rem;margin:1.2rem 0}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:.9rem;margin:1.2rem 0}
+    .card{background:var(--panel);border:1px solid var(--border);border-radius:6px;padding:1.05rem 1.15rem;
+      position:relative;overflow:hidden}
+    .card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--phosphor3)}
+    .card.green::before{background:var(--phosphor)}
+    .card.cyan::before{background:var(--cyan)}
+    .card.amber::before{background:var(--amber)}
+    .card.red::before{background:var(--red)}
+    .card .ttl{color:var(--text2);font-size:11.5px;letter-spacing:.5px;text-transform:uppercase}
+    .card .st{font-size:1.05rem;font-weight:700;margin:.35rem 0;line-height:1.3}
+    .card.green .st{color:var(--phosphor)}
+    .card.cyan .st{color:var(--cyan)}
+    .card.amber .st{color:var(--amber)}
+    .card.red .st{color:var(--red)}
+    .card .det{color:var(--text2);font-size:12.5px;margin-top:.4rem;line-height:1.5}
+    .status,.tag{font-size:11px;padding:.05rem .4rem;border-radius:3px;white-space:nowrap;display:inline-block}
+    .s-data{color:var(--cyan);border:1px solid #135}
+    .conf{font-size:11px;padding:.18rem .55rem;border-radius:3px;border:1px solid var(--border2);color:var(--text3)}
+    .conf.high{color:var(--phosphor);border-color:var(--phosphor3)}
+    .conf.medium{color:var(--amber);border-color:#653}
+    .conf.low{color:var(--red);border-color:#511}
+    ul{margin:.6rem 0 .6rem 1.3rem}li{margin:.35rem 0}
+    .srclist{list-style:none;margin-left:0}
+    .srclist li{word-break:break-all}
+    .navbar{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;
+      margin:2.2rem 0 .5rem;border-top:1px dashed var(--border2);padding-top:1rem;font-size:13px}
+    .navbar a{color:var(--cyan)}
+    .navbar .disabled{color:var(--text3);pointer-events:none}
+    .navbar .mid{color:var(--text2)}
+    .countrylist{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.5rem;margin:1.2rem 0}
+    .countrylist a{border:1px solid var(--border2);background:var(--panel);border-radius:4px;
+      padding:.5rem .7rem;font-size:13px;color:var(--cyan)}
+    .countrylist a:hover{border-color:var(--phosphor3)}
+    .countrylist a .cc{color:var(--phosphor);font-weight:700;margin-right:.4rem}
+    .disclaimer{border:1px solid var(--amber);border-radius:4px;background:rgba(255,183,0,.05);
+      padding:1rem 1.2rem;margin:1.8rem 0;font-size:13px}
+    .disclaimer b{color:var(--amber)}
+    .msg{border:1px solid var(--border2);background:var(--bg2);border-radius:4px;padding:1rem 1.2rem;
+      margin:1.2rem 0;color:var(--text2)}
+    .msg b{color:var(--amber)}
+    .err{color:var(--red)}
+    footer{margin-top:3rem;border-top:1px solid var(--border);padding-top:1rem;color:var(--text3);font-size:12px}
+    footer .ver{color:var(--phosphor3)}
+    @media(max-width:560px){h1{font-size:1.5rem}.card .st{font-size:.98rem}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="brand">{{PUBLISHER_NAME}}<span>&nbsp;//&nbsp;country</span></div>
+      <nav>
+        <a href="/">Home</a>
+        <a href="/ai-truth">Portal</a>
+        <a href="/ai-truth/map-eu">Map</a>
+        <a href="/ai-truth/report">Report</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <div class="crumb" id="crumb">ai-truth / country / {{COUNTRY_CODE}}</div>
+
+    <h1 id="title">{{COUNTRY_NAME}} — AI Act readiness</h1>
+    <p class="lede" id="lede">Readiness of the Member State {{COUNTRY_NAME}} ({{COUNTRY_CODE}}) for
+      Regulation (EU) 2024/1689 (AI Act): national competent authority, regulatory sandbox and
+      national implementing law — with cited sources.</p>
+
+    <div class="badges">
+      <span class="badge cyan">STATUS: DATA</span>
+      <span class="badge green" id="badge-conf">confidence: —</span>
+      <span class="badge">{{SNAPSHOT_DATE}}</span>
+      <span class="badge green">evidence-first &middot; claim &le; proof</span>
+    </div>
+
+    <!-- Static fallback: rendered when no dataset endpoint is available (offline / static hosting).
+         Replace the placeholders with sourced values, or delete this block if the page is
+         always served with {{COUNTRY_DATA_ENDPOINT}} behind it. Never state an unsourced value
+         as DOWÓD — an unconfirmed field stays "n/a (GAP)". -->
+    <div id="content">
+      <div class="cards">
+        <div class="card cyan">
+          <div class="ttl">National competent authority (NCA)</div>
+          <div class="st">{{NCA_STATUS}}</div>
+          <div class="det">{{NCA_NAME}}</div>
+        </div>
+        <div class="card cyan">
+          <div class="ttl">Regulatory sandbox</div>
+          <div class="st">{{SANDBOX_STATUS}}</div>
+          <div class="det">AI Act requirement: at least one operational sandbox per Member State.</div>
+        </div>
+        <div class="card cyan">
+          <div class="ttl">National law</div>
+          <div class="st">{{NATIONAL_LAW_STATUS}}</div>
+          <div class="det">{{NATIONAL_LAW}}</div>
+        </div>
+      </div>
+
+      <h2><span class="n">// </span>Notes <span class="status s-data">DATA</span></h2>
+      <div class="panel"><p>{{COUNTRY_NOTES}}</p></div>
+
+      <h2><span class="n">// </span>Sources</h2>
+      <div class="panel"><ul class="srclist">
+        <li><a href="{{SOURCE_URL}}" rel="noopener noreferrer">{{SOURCE_URL}}</a></li>
+        <!-- repeat one <li> per resolvable public source; a row without a source is GAP, not DOWÓD -->
+      </ul></div>
+    </div>
+
+    <div class="disclaimer">
+      <b>Disclaimer.</b> This material is informational and research-grade and stays under human
+      supervision. It is not a certification, not an opinion of a notified body and not a legal
+      conclusion (<i>not a certification &middot; not a notified body &middot; not a legal conclusion</i>).
+      Data reflect the state of knowledge on the publication date and are subject to update.
+      Details: <a href="/legal/not-certification">/legal/not-certification</a>.
+    </div>
+
+    <footer>
+      {{PUBLISHER_NAME}} &middot; {{PUBLISHER_ID}} &nbsp;|&nbsp;
+      <span class="ver">{{SURFACE_ID}} &middot; {{VERSION}} &middot; {{SNAPSHOT_DATE}}</span>
+    </footer>
+  </div>
+
+  <script>
+    // Optional progressive enhancement: if a dataset endpoint is configured, it overrides the
+    // static fallback above. If the fetch fails, the static content stays on screen.
+    // Endpoint contract: { countries: [ { code, name, nca_status, nca_name, sandbox_status,
+    // national_law_status, notes, confidence, sources[] } ] }
+    document.addEventListener('DOMContentLoaded', function(){
+      'use strict';
+
+      var ENDPOINT = '{{COUNTRY_DATA_ENDPOINT}}';
+      if(!ENDPOINT || ENDPOINT.charAt(0) === '{') return; // placeholder not replaced → keep static content
+
+      var content = document.getElementById('content');
+      var titleEl = document.getElementById('title');
+      var ledeEl = document.getElementById('lede');
+      var crumbEl = document.getElementById('crumb');
+      var badgeConf = document.getElementById('badge-conf');
+
+      function esc(s){
+        return String(s == null ? '' : s)
+          .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+          .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+      }
+
+      // status label maps (nca / sandbox / national law) — text carries the meaning, colour only reinforces
+      var NCA = {
+        designated: { cls:'green', txt:'DESIGNATED' },
+        partial:    { cls:'amber', txt:'PARTIAL' },
+        none:       { cls:'red',   txt:'NONE' }
+      };
+      var SBOX = {
+        operational:{ cls:'green', txt:'OPERATIONAL' },
+        planned:    { cls:'amber', txt:'PLANNED' },
+        none:       { cls:'red',   txt:'NONE' },
+        unknown:    { cls:'cyan',  txt:'UNCONFIRMED' }
+      };
+      var LAW = {
+        in_force:   { cls:'green', txt:'IN FORCE' },
+        adopted:    { cls:'green', txt:'ADOPTED' },
+        draft:      { cls:'amber', txt:'DRAFT' },
+        partial:    { cls:'amber', txt:'PARTIAL' },
+        none:       { cls:'red',   txt:'NONE' }
+      };
+      function confCls(c){ var l=String(c||'').toLowerCase(); return (l==='high'||l==='medium'||l==='low')?l:'medium'; }
+
+      function statusFail(){
+        badgeConf.textContent = 'confidence: n/a';
+        content.innerHTML =
+          '<div class="msg err"><b>n/a — data unavailable.</b> Could not load the dataset ' +
+          '<code>' + esc(ENDPOINT) + '</code>. Try again later or go back to the ' +
+          '<a href="/ai-truth/map-eu">EU map</a>.</div>';
+      }
+
+      function renderList(countries, message){
+        var sorted = countries.slice().sort(function(a,b){
+          return String(a.name).localeCompare(String(b.name));
+        });
+        var html = '<div class="msg"><b>' + esc(message) + '</b> Pick a country below:</div>';
+        html += '<div class="countrylist">';
+        sorted.forEach(function(c){
+          html += '<a href="?code=' + encodeURIComponent(c.code) + '">' +
+                  '<span class="cc">' + esc(c.code) + '</span>' + esc(c.name) + '</a>';
+        });
+        html += '</div>';
+        content.innerHTML = html;
+      }
+
+      function renderCountry(c, countries){
+        var sorted = countries.slice().sort(function(a,b){
+          return String(a.name).localeCompare(String(b.name));
+        });
+        var idx = -1;
+        for(var i=0;i<sorted.length;i++){ if(sorted[i].code===c.code){ idx=i; break; } }
+        var prev = idx>0 ? sorted[idx-1] : null;
+        var next = (idx>=0 && idx<sorted.length-1) ? sorted[idx+1] : null;
+
+        document.title = c.name + ' (' + c.code + ') — AI Act readiness';
+        titleEl.textContent = c.name + ' — AI Act readiness';
+        ledeEl.innerHTML = 'Implementation status of Regulation (EU) 2024/1689 (AI Act) in ' +
+          '<strong style="color:var(--text)">' + esc(c.name) + ' (' + esc(c.code) + ')</strong> ' +
+          '— competent authority, sandbox and national law, with cited sources.';
+        crumbEl.textContent = 'ai-truth / country / ' + c.code;
+        var cc = confCls(c.confidence);
+        badgeConf.className = 'badge conf ' + cc;
+        badgeConf.textContent = 'confidence: ' + esc(c.confidence || 'n/a');
+
+        var nca  = NCA[c.nca_status]  || { cls:'cyan', txt:String(c.nca_status||'n/a').toUpperCase() };
+        var sbox = SBOX[c.sandbox_status] || { cls:'cyan', txt:String(c.sandbox_status||'n/a').toUpperCase() };
+        var law  = LAW[c.national_law_status] || { cls:'cyan', txt:String(c.national_law_status||'n/a').toUpperCase() };
+
+        var html = '';
+        html += '<div class="cards">';
+        html += '<div class="card ' + nca.cls + '">' +
+                '<div class="ttl">National competent authority (NCA)</div>' +
+                '<div class="st">' + esc(nca.txt) + '</div>' +
+                '<div class="det">' + esc(c.nca_name || 'n/a') + '</div></div>';
+        html += '<div class="card ' + sbox.cls + '">' +
+                '<div class="ttl">Regulatory sandbox</div>' +
+                '<div class="st">' + esc(sbox.txt) + '</div>' +
+                '<div class="det">AI Act requirement: at least one operational sandbox per Member State.</div></div>';
+        html += '<div class="card ' + law.cls + '">' +
+                '<div class="ttl">National law</div>' +
+                '<div class="st">' + esc(law.txt) + '</div>' +
+                '<div class="det">' + esc(c.national_law || c.national_law_status || 'n/a') + '</div></div>';
+        html += '</div>';
+
+        html += '<h2><span class="n">// </span>Notes <span class="status s-data">DATA</span></h2>';
+        html += '<div class="panel"><p>' + esc(c.notes || 'n/a — no notes.') + '</p></div>';
+
+        html += '<h2><span class="n">// </span>Sources</h2>';
+        if(c.sources && c.sources.length){
+          html += '<div class="panel"><ul class="srclist">';
+          c.sources.forEach(function(u){
+            html += '<li><a href="' + esc(u) + '" target="_blank" rel="noopener noreferrer">' + esc(u) + '</a></li>';
+          });
+          html += '</ul></div>';
+        } else {
+          html += '<div class="panel"><p>n/a — no sources (GAP).</p></div>';
+        }
+
+        html += '<div class="navbar">';
+        html += prev
+          ? '<a href="?code=' + encodeURIComponent(prev.code) + '">&larr; ' + esc(prev.name) + '</a>'
+          : '<span class="disabled">&larr; —</span>';
+        html += '<a class="mid" href="/ai-truth/map-eu">&uarr; EU map</a>';
+        html += next
+          ? '<a href="?code=' + encodeURIComponent(next.code) + '">' + esc(next.name) + ' &rarr;</a>'
+          : '<span class="disabled">— &rarr;</span>';
+        html += '</div>';
+
+        content.innerHTML = html;
+      }
+
+      fetch(ENDPOINT, { headers: { 'Accept':'application/json' } })
+        .then(function(r){ if(!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+        .then(function(d){
+          var countries = (d && Array.isArray(d.countries)) ? d.countries : [];
+          if(!countries.length){ statusFail(); return; }
+
+          var params = new URLSearchParams(window.location.search);
+          var code = (params.get('code') || '{{COUNTRY_CODE}}').trim().toUpperCase();
+
+          var found = null;
+          for(var i=0;i<countries.length;i++){
+            if(String(countries[i].code).toUpperCase() === code){ found = countries[i]; break; }
+          }
+          if(!found){
+            renderList(countries, 'No country found for code "' + code + '".');
+            return;
+          }
+          renderCountry(found, countries);
+        })
+        .catch(function(){ statusFail(); });
+    });
+  </script>
+</body>
+</html>

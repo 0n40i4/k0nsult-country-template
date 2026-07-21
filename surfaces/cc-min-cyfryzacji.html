@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<!--
+  TEMPLATE — k0nsult-country-template / surfaces/cc-min-cyfryzacji.html
+  Rename to <cc>-min-cyfryzacji.html (or a slug matching the real competent authority) and
+  replace every double-brace token (see the placeholder inventory). Placeholder inventory: surfaces/README.md.
+  Steps: ../INSTANTIATION-CHECKLIST.md (esp. steps 3–4: authority mapping).
+  No external dependencies: no CDN, no web fonts, no trackers — the page works offline.
+  Doctrine: claim <= proof; institutions only, never natural persons; the engine stays hidden.
+  HARD RULE: do not publish names of office holders. Institution + generic inbox + public URL only.
+-->
+<html lang="{{LANG}}">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#060b06">
+<title>{{DIGITAL_AUTHORITY_NAME}} — digital state map | AI Truth (SANDBOX)</title>
+<meta name="description" content="Digital state map for {{COUNTRY_NAME}}: {{DIGITAL_AUTHORITY_NAME}}, departments, supervised entities, AI Act authorities and the national cybersecurity stack, with read-only links. claim &lt;= proof.">
+<link rel="canonical" href="{{CANONICAL_URL}}"/>
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{PUBLISHER_NAME}}">
+  <meta property="og:locale" content="{{OG_LOCALE}}">
+  <meta property="og:title" content="{{DIGITAL_AUTHORITY_NAME}} — digital state map | AI Truth (SANDBOX)">
+  <meta property="og:description" content="Structure, supervised entities, AI Act authorities and cybersecurity stack of {{COUNTRY_NAME}} — read-only public sources only. NOT an official government system.">
+  <meta property="og:url" content="{{CANONICAL_URL}}">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{DIGITAL_AUTHORITY_NAME}} — digital state map | AI Truth (SANDBOX)">
+  <meta name="twitter:description" content="Structure, supervised entities, AI Act authorities and cybersecurity stack of {{COUNTRY_NAME}} — read-only public sources only. NOT an official government system.">
+<!-- schema.org (sandbox-safe): this page is NOT the official site of {{DIGITAL_AUTHORITY_NAME}}. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "{{DIGITAL_AUTHORITY_NAME}} — digital state map",
+  "url": "{{CANONICAL_URL}}",
+  "inLanguage": "{{LANG}}",
+  "isAccessibleForFree": true,
+  "disambiguatingDescription": "Educational / observational SANDBOX material. This is NOT an official system or website of {{DIGITAL_AUTHORITY_NAME}} and performs no live sync with government infrastructure. Every claim <= documented proof.",
+  "creator": { "@type": "Organization", "name": "{{PUBLISHER_NAME}}", "url": "{{SITE_BASE_URL}}" },
+  "isPartOf": { "@type": "WebSite", "name": "{{PUBLISHER_NAME}} · AI Truth", "url": "{{SITE_BASE_URL}}/ai-truth" },
+  "about": {
+    "@type": "GovernmentOrganization",
+    "name": "{{DIGITAL_AUTHORITY_NAME}}",
+    "url": "{{DIGITAL_AUTHORITY_URL}}",
+    "sameAs": ["{{DIGITAL_AUTHORITY_URL}}"]
+  }
+}
+</script>
+<style>
+:root{--bg:#060b06;--bg2:#0a0f0a;--panel:#0e160e;--border:#1a2e1a;--border2:#243c24;--phosphor:#39ff14;--phosphor3:#166b0a;--amber:#ffb700;--red:#ff3333;--cyan:#00e5ff;--text:#c8e8c8;--text2:#8ab08a;--text3:#6f956f;--font-mono:'JetBrains Mono','Share Tech Mono','Courier New',monospace}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font-mono);line-height:1.6;font-size:15px}
+a{color:var(--cyan);text-decoration:underline}a:hover{color:var(--phosphor)}
+header{border-bottom:1px solid var(--border);background:var(--bg2);padding:.8rem 0;position:sticky;top:0;z-index:50}
+.hdr{max-width:1500px;margin:0 auto;padding:0 1.2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem}
+.brand{color:var(--phosphor);font-weight:700;font-size:1rem}.brand span{color:var(--text3);font-weight:400}
+.topnav{display:flex;gap:.4rem;flex-wrap:wrap}
+.topnav a{color:var(--text2);font-size:12px;padding:.2rem .5rem;border:1px solid var(--border);border-radius:3px}
+.topnav a:hover,.topnav a.act{border-color:var(--phosphor3);color:var(--phosphor)}
+.mc-wrap{max-width:1500px;margin:0 auto;padding:1.2rem;display:grid;grid-template-columns:1fr 260px;gap:1.4rem}
+@media(max-width:1100px){.mc-wrap{grid-template-columns:1fr}.mc-menu{position:static!important;height:auto!important;order:-1;border-left:0;padding-left:0}}
+.mc-main{min-width:0}
+.mc-menu{position:sticky;top:64px;height:calc(100vh - 80px);overflow-y:auto;border-left:1px solid var(--border);padding-left:1rem}
+.mc-menu .grp{margin-bottom:1rem}
+.mc-menu .grp-t{font-size:10px;text-transform:uppercase;letter-spacing:.8px;color:var(--text3);padding:.3rem 0 .2rem;border-bottom:1px solid var(--border);margin-bottom:.3rem}
+.mc-menu a{display:flex;justify-content:space-between;align-items:center;gap:.4rem;padding:.22rem .35rem;font-size:12.5px;color:var(--text2);border-radius:3px}
+.mc-menu a:hover{background:var(--panel);color:var(--phosphor)}
+.mc-sec{background:var(--panel);border:1px solid var(--border2);border-radius:6px;padding:1.1rem 1.3rem;margin-bottom:1.3rem}
+.mc-sec h2{color:var(--text);font-size:1.05rem;margin-bottom:.7rem;padding-bottom:.3rem;border-bottom:1px dashed var(--border2)}
+.mc-sec h3{color:var(--text);font-size:.92rem;margin:.3rem 0}
+.mc-sec p{color:var(--text2);font-size:13.5px;margin:.35rem 0}
+.mc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:.7rem;margin:.5rem 0}
+.mc-card{background:var(--bg2);border:1px solid var(--border2);border-radius:5px;padding:.75rem .85rem}
+.mc-card:hover{border-color:var(--phosphor3)}
+.mc-card h3{font-size:.88rem;margin:.1rem 0}.mc-card p{font-size:12px;color:var(--text3);margin:.15rem 0 0}
+.st{display:inline-block;font-size:10px;font-weight:700;border-radius:2px;padding:.06rem .4rem;vertical-align:middle;white-space:nowrap}
+.st-on{background:rgba(0,229,255,.1);color:var(--cyan);border:1px solid #135}
+.st-ready{background:rgba(255,183,0,.1);color:var(--amber);border:1px solid var(--amber)}
+.st-live{background:rgba(57,255,20,.1);color:var(--phosphor);border:1px solid var(--phosphor3)}
+.st-gap{background:rgba(255,51,51,.08);color:var(--red);border:1px solid #722}
+table{width:100%;border-collapse:collapse;font-size:13px;margin:.5rem 0}
+th,td{border:1px solid var(--border2);padding:.4rem .6rem;text-align:left;vertical-align:top}
+th{background:var(--bg2);color:var(--text2);font-size:11px;text-transform:uppercase}
+table.wide{min-width:760px}
+.tbl-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.conn{color:var(--cyan);font-size:12.5px}
+.legend{display:flex;gap:1rem;flex-wrap:wrap;font-size:12px;color:var(--text3);margin:.5rem 0;align-items:center}
+.mc-disc{border:1px solid var(--border2);border-radius:4px;padding:.7rem 1rem;margin:.8rem 0;font-size:12px;color:var(--text3)}
+.mc-disc.warn{border-color:var(--amber);border-left:3px solid var(--amber);background:rgba(255,183,0,.09);color:var(--text2)}
+footer{border-top:1px solid var(--border);padding:1rem 1.2rem;margin-top:1rem;color:var(--text3);font-size:12px}
+</style>
+</head>
+<body>
+<header><div class="hdr">
+<div class="brand">{{PUBLISHER_NAME}}<span>&nbsp;//&nbsp;</span>{{DIGITAL_AUTHORITY_NAME}}</div>
+<nav class="topnav">
+<a href="/ai-truth">&larr; AI Truth</a>
+<a href="/ai-truth/min-cyfryzacji" class="act">Digital authority</a>
+<a href="/ai-truth/panstwo">State</a>
+<a href="{{DIGITAL_AUTHORITY_URL}}" target="_blank" rel="noopener">official site &#8599;</a>
+</nav>
+</div></header>
+<div class="mc-wrap">
+<main class="mc-main">
+<div class="mc-disc warn">
+  <strong>SANDBOX — not an official system.</strong> This is not an official system or website of
+  {{DIGITAL_AUTHORITY_NAME}} and performs no live sync with government infrastructure. Connectors
+  point only to public read-only pages. All ON / READY / LIVE states are declarative. Hard API
+  connectors into government systems = <span class="st st-gap">GAP</span>. claim &le; proof.
+</div>
+
+<section class="mc-sec" id="top">
+  <h2>{{DIGITAL_AUTHORITY_NAME}} — overview</h2>
+  <p>Static structural snapshot of the competent digital authority of {{COUNTRY_NAME}}
+    (snapshot {{SNAPSHOT_DATE}}, source: public official pages). Official portal:
+    <a class="conn" href="{{DIGITAL_AUTHORITY_URL}}" target="_blank" rel="noopener">{{DIGITAL_AUTHORITY_URL}} &#8599;</a></p>
+
+  <div class="mc-grid">
+    <div class="mc-card">
+      <h3>Mapped entries</h3>
+      <p><span class="st st-on">ON</span> {{MAPPED_COUNT}} entries (departments, offices, supervised
+        entities) mapped statically from public sources — snapshot {{SNAPSHOT_DATE}}, no live feed.</p>
+    </div>
+    <div class="mc-card">
+      <h3>Ready to map</h3>
+      <p><span class="st st-ready">READY</span> {{READY_COUNT}} entries planned for the next mapping
+        pass — no active monitoring yet.</p>
+    </div>
+    <div class="mc-card">
+      <h3>Read-only links</h3>
+      <p><span class="st st-live">LIVE</span> hyperlinks to public pages of supervised entities —
+        full list in <a href="#podmioty">Supervised entities</a>. "LIVE" = the page returned an HTTP
+        status, <strong>not</strong> a data feed.</p>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="st st-on">ON</span> mapped / active &nbsp;
+    <span class="st st-ready">READY</span> ready to map &nbsp;
+    <span class="st st-live">LIVE</span> read-only link responding &nbsp;
+    <span class="st st-gap">GAP</span> missing / unverified
+  </div>
+  <div class="mc-disc">Each state label is spelled out in text — the colour only reinforces it, it is
+    never the sole carrier of meaning.</div>
+</section>
+
+<section class="mc-sec" id="obszary">
+  <h2>Key policy areas</h2>
+  <p>List the actual remit of {{DIGITAL_AUTHORITY_NAME}}. The cards below are a starting skeleton of
+    areas common across EU Member States — delete what does not apply, add what does, and link each
+    to its official page. Do not claim an area the authority does not actually hold.</p>
+  <div class="mc-grid">
+    <div class="mc-card">
+      <h3>Cybersecurity <span class="st st-ready">?</span></h3>
+      <p>NIS2 transposition, national CSIRT oversight. {{CYBER_AUTHORITY_NAME}}.</p>
+      <a class="conn" href="{{CYBER_AUTHORITY_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+    <div class="mc-card">
+      <h3>AI governance <span class="st st-ready">?</span></h3>
+      <p>Regulation (EU) 2024/1689 (AI Act): market surveillance, notifying authority, national AI
+        strategy. {{NCA_NAME}}.</p>
+      <a class="conn" href="{{NCA_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+    <div class="mc-card">
+      <h3>Data protection <span class="st st-ready">?</span></h3>
+      <p>GDPR supervision, coordination with the data protection authority. {{DPA_NAME}}.</p>
+      <a class="conn" href="{{DPA_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+    <div class="mc-card">
+      <h3>Digital public services <span class="st st-ready">?</span></h3>
+      <p>e-government services, national identity and service portals.</p>
+      <a class="conn" href="{{DIGITAL_AUTHORITY_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+    <div class="mc-card">
+      <h3>Open data <span class="st st-ready">?</span></h3>
+      <p>Public sector information and re-use; national open data portal.</p>
+      <a class="conn" href="{{OPEN_DATA_PORTAL_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+    <div class="mc-card">
+      <h3>Digital accessibility <span class="st st-ready">?</span></h3>
+      <p>WCAG / Directive (EU) 2016/2102 compliance of public websites.</p>
+      <a class="conn" href="{{DIGITAL_AUTHORITY_URL}}" target="_blank" rel="noopener">area &#8599;</a>
+    </div>
+  </div>
+  <div class="mc-disc">Tile states are declarative and do not reflect any live sync. Links point to
+    public pages (read-only).</div>
+</section>
+
+<section class="mc-sec" id="departamenty">
+  <h2>Internal structure (departments / units)</h2>
+  <div class="tbl-scroll">
+    <table class="wide">
+      <caption class="mc-disc" style="caption-side:bottom;text-align:left">Organisational units only — no personal data of office holders.</caption>
+      <thead>
+        <tr><th scope="col">#</th><th scope="col">Unit</th><th scope="col">Lead area</th><th scope="col">State</th><th scope="col">Link</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>{{UNIT_NAME}}</td>
+          <td>{{UNIT_REMIT}}</td>
+          <td><span class="st st-ready">?</span></td>
+          <td><a class="conn" href="{{UNIT_URL}}" target="_blank" rel="noopener">{{UNIT_URL}} &#8599;</a></td>
+        </tr>
+        <!-- repeat one <tr> per unit published in the authority's official structure -->
+      </tbody>
+    </table>
+  </div>
+  <div class="mc-disc">Source: the authority's official organisational structure page
+    ({{SNAPSHOT_DATE}}). A unit that is not published publicly stays out — do not infer it.</div>
+</section>
+
+<section class="mc-sec" id="podmioty">
+  <h2>Supervised / subordinate entities</h2>
+  <div class="tbl-scroll">
+    <table class="wide">
+      <thead>
+        <tr><th scope="col">Entity</th><th scope="col">Type</th><th scope="col">Role</th><th scope="col">State</th><th scope="col">Read-only link</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ENTITY_NAME}}</td>
+          <td>{{ENTITY_TYPE}}</td>
+          <td>{{ENTITY_ROLE}}</td>
+          <td><span class="st st-ready">?</span></td>
+          <td><a class="conn" href="{{ENTITY_URL}}" target="_blank" rel="noopener">{{ENTITY_URL}} &#8599;</a></td>
+        </tr>
+        <!-- repeat one <tr> per supervised entity -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="mc-sec" id="instytucje">
+  <h2>AI Act authority registry ({{COUNTRY_NAME}})</h2>
+  <p>Institutional registry data required by the instantiation checklist (step 3). A row with a
+    resolvable public source is <strong>DOWÓD</strong>; a row you still have to confirm is
+    <strong>GAP</strong> — label it, never present it as verified.</p>
+  <div class="tbl-scroll">
+    <table class="wide">
+      <caption class="mc-disc" style="caption-side:bottom;text-align:left">Institutional contacts (office, generic inbox, register entry) — not personal data.</caption>
+      <thead>
+        <tr><th scope="col">Function under the AI Act / GDPR</th><th scope="col">Institution</th><th scope="col">Public contact</th><th scope="col">Evidence class</th><th scope="col">Source</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>National competent authority (AI Act)</td>
+          <td>{{NCA_NAME}}</td>
+          <td>{{NCA_CONTACT}}</td>
+          <td><span class="st st-ready">GAP / DOWÓD</span></td>
+          <td><a class="conn" href="{{NCA_SOURCE_URL}}" target="_blank" rel="noopener">source &#8599;</a></td>
+        </tr>
+        <tr>
+          <td>Market surveillance / notifying authority</td>
+          <td>{{MARKET_SURVEILLANCE_AUTHORITY}}</td>
+          <td>{{MARKET_SURVEILLANCE_CONTACT}}</td>
+          <td><span class="st st-ready">GAP / DOWÓD</span></td>
+          <td><a class="conn" href="{{MARKET_SURVEILLANCE_SOURCE_URL}}" target="_blank" rel="noopener">source &#8599;</a></td>
+        </tr>
+        <tr>
+          <td>Data protection authority (GDPR)</td>
+          <td>{{DPA_NAME}}</td>
+          <td>{{DPA_CONTACT}}</td>
+          <td><span class="st st-ready">GAP / DOWÓD</span></td>
+          <td><a class="conn" href="{{DPA_SOURCE_URL}}" target="_blank" rel="noopener">source &#8599;</a></td>
+        </tr>
+        <tr>
+          <td>Regulatory sandbox (AI Act art. 57)</td>
+          <td>{{SANDBOX_AUTHORITY}}</td>
+          <td>{{SANDBOX_CONTACT}}</td>
+          <td><span class="st st-ready">{{SANDBOX_STATUS}}</span></td>
+          <td><a class="conn" href="{{SANDBOX_SOURCE_URL}}" target="_blank" rel="noopener">source &#8599;</a></td>
+        </tr>
+        <tr>
+          <td>National implementing law</td>
+          <td>{{NATIONAL_LAW}}</td>
+          <td>—</td>
+          <td><span class="st st-ready">GAP / DOWÓD</span></td>
+          <td><a class="conn" href="{{NATIONAL_LAW_SOURCE_URL}}" target="_blank" rel="noopener">official gazette &#8599;</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="mc-disc warn">Cross-check every row against the EU-level view so the national and EU
+    layers agree (checklist step 3). An unsourced row must not be labelled DOWÓD.</div>
+</section>
+
+<section class="mc-sec" id="cyber">
+  <h2>National cybersecurity stack</h2>
+  <p>Components of the {{COUNTRY_NAME}} cybersecurity system relevant to NIS2 and to AI Act
+    incident reporting. Fill in only bodies that actually exist; leave the rest out.</p>
+  <div class="tbl-scroll">
+    <table class="wide">
+      <thead>
+        <tr><th scope="col">Component</th><th scope="col">Function</th><th scope="col">State</th><th scope="col">Read-only link</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{CSIRT_NAME}}</td>
+          <td>National CSIRT / incident response</td>
+          <td><span class="st st-ready">?</span></td>
+          <td><a class="conn" href="{{CSIRT_URL}}" target="_blank" rel="noopener">{{CSIRT_URL}} &#8599;</a></td>
+        </tr>
+        <tr>
+          <td>{{CYBER_AUTHORITY_NAME}}</td>
+          <td>NIS2 competent authority</td>
+          <td><span class="st st-ready">?</span></td>
+          <td><a class="conn" href="{{CYBER_AUTHORITY_URL}}" target="_blank" rel="noopener">{{CYBER_AUTHORITY_URL}} &#8599;</a></td>
+        </tr>
+        <!-- repeat one <tr> per real component -->
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="mc-sec" id="konektory">
+  <h2>Public connectors &middot; link-health</h2>
+  <div class="mc-disc">
+    <em>Soft connectors</em> = hyperlinks to public pages, verified by an HTTP status test.
+    <em>Hard connectors</em> = APIs into government systems: <span class="st st-gap">GAP</span> —
+    none is available here, and none is simulated.
+  </div>
+  <noscript><p>JavaScript is disabled — link-health is unavailable. All registry content above is static and remains readable.</p></noscript>
+  <div class="tbl-scroll">
+    <table class="wide">
+      <thead><tr><th scope="col">Connector</th><th scope="col">Kind</th><th scope="col">State</th></tr></thead>
+      <tbody>
+        <tr><td><a class="conn" href="{{DIGITAL_AUTHORITY_URL}}" target="_blank" rel="noopener">{{DIGITAL_AUTHORITY_URL}} &#8599;</a></td><td>public page (read-only)</td><td><span class="st st-ready">?</span></td></tr>
+        <tr><td>Government API</td><td>hard connector</td><td><span class="st st-gap">GAP</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section class="mc-sec" id="zrodla">
+  <h2>Sources and method</h2>
+  <p>Structure and registry data: public official pages of {{COUNTRY_NAME}} (snapshot
+    {{SNAPSHOT_DATE}}). No fabricated rows — an entry without a resolvable public source is marked
+    <span class="st st-gap">GAP</span>.</p>
+  <div class="mc-disc warn">
+    <strong>DIGITAL AUTHORITY MAP · SANDBOX</strong><br>
+    This visualisation is not an official product of {{DIGITAL_AUTHORITY_NAME}}. All states
+    (ON / READY / LIVE / GAP) are declarative. No claim exceeds the available proof
+    (claim &le; proof). Connectors marked GAP do not exist and pull no data from government systems.<br><br>
+    <strong>{{PUBLISHER_NAME}}</strong> · {{PUBLISHER_ID}} · {{SURFACE_ID}} · {{VERSION}}
+  </div>
+</section>
+
+</main>
+<aside class="mc-menu" aria-label="Section navigation">
+<div class="mc-sec" id="mc-nav" style="min-width:0">
+  <h2 style="font-size:.85rem;letter-spacing:.12em;margin-bottom:.7rem">DIGITAL AUTHORITY</h2>
+  <div class="grp">
+    <div class="grp-t">Legend</div>
+    <div class="legend" style="font-size:.72rem;line-height:1.7">
+      <span class="st st-live">LIVE</span> public link responding<br>
+      <span class="st st-on">ON</span> mapped / declarative<br>
+      <span class="st st-ready">READY</span> planned, unverified<br>
+      <span class="st st-gap">GAP</span> no API / out of scope
+    </div>
+  </div>
+  <div class="grp">
+    <div class="grp-t">Sections</div>
+    <a href="#top">Overview</a>
+    <a href="#obszary">Policy areas</a>
+    <a href="#departamenty">Internal structure</a>
+    <a href="#podmioty">Supervised entities</a>
+    <a href="#instytucje">AI Act registry</a>
+    <a href="#cyber">Cybersecurity stack</a>
+    <a href="#konektory">Connectors</a>
+    <a href="#zrodla">Sources</a>
+  </div>
+  <div class="grp">
+    <div class="grp-t">Related</div>
+    <a href="/ai-truth/panstwo">State observatory</a>
+    <a href="/ai-truth">AI Truth hub</a>
+  </div>
+  <div class="mc-disc" style="font-size:.68rem;margin-top:1rem">SANDBOX visualisation. Not an official
+    system of {{DIGITAL_AUTHORITY_NAME}} and not a live sync with government infrastructure.</div>
+</div>
+</aside>
+</div>
+
+<footer>
+  {{PUBLISHER_NAME}} · AI Truth · {{DIGITAL_AUTHORITY_NAME}} map — SANDBOX · claim &le; proof · read-only public links
+</footer>
+
+<!-- Soft-live link-health of the public connectors.
+     Endpoint contract: { generated_at, total, ok, gap, results:[ { url, ok, status, ms, note } ] }
+     If {{LINK_HEALTH_ENDPOINT}} is not replaced, the script does nothing (static page stays valid). -->
+<script>
+(function () {
+  var ENDPOINT = '{{LINK_HEALTH_ENDPOINT}}';
+  if (!ENDPOINT || ENDPOINT.charAt(0) === '{') return;
+
+  function esc(s){var d=document.createElement('div');d.textContent=s==null?'':String(s);return d.innerHTML;}
+  function fmtTs(iso){try{return new Date(iso).toLocaleString(undefined,{dateStyle:'short',timeStyle:'short'});}catch(e){return iso;}}
+  function host(u){try{return new URL(u).host;}catch(e){return u;}}
+
+  function render(data){
+    var sec=document.getElementById('konektory');
+    if(!sec) return;
+    var panel=document.createElement('div');
+    panel.id='mc-linkhealth';
+    panel.setAttribute('role','region');
+    panel.setAttribute('aria-label','Connector link-health (soft-live)');
+    panel.className='mc-disc';
+
+    if(!data||!Array.isArray(data.results)){
+      panel.innerHTML='<strong>Connector link-health</strong> <span class="st st-gap">GAP</span> no soft-live data (test not run or endpoint unavailable).';
+    } else {
+      var rows=data.results.map(function(r){
+        var badge=r.ok?'<span class="st st-live">LIVE</span>':'<span class="st st-gap">GAP</span>';
+        var meta=r.ok?(esc(r.status)+' · '+esc(r.ms)+'ms'):esc(r.note||'error');
+        return '<div style="display:flex;justify-content:space-between;gap:.6rem;padding:.12rem 0;font-size:12px">'+
+               '<span>'+badge+' '+esc(host(r.url))+'</span>'+
+               '<span style="color:var(--text3);white-space:nowrap">'+meta+'</span></div>';
+      }).join('');
+      panel.innerHTML=
+        '<div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem;align-items:baseline">'+
+          '<strong>Connector link-health (soft-live)</strong>'+
+          '<span style="font-size:12px;color:var(--text3)">last check: '+esc(fmtTs(data.generated_at))+'</span>'+
+        '</div>'+
+        '<div style="margin:.35rem 0;font-size:13px">'+
+          '<span class="st st-live">LIVE</span> '+esc(data.ok)+' &nbsp; <span class="st st-gap">GAP</span> '+esc(data.gap)+
+          ' &nbsp;/&nbsp; '+esc(data.total)+' public read-only connectors</div>'+
+        '<div style="max-height:230px;overflow:auto;margin-top:.3rem">'+rows+'</div>'+
+        '<div style="margin-top:.5rem;font-size:11.5px">Soft-live = the page returned an HTTP status in the test (200–3xx &rarr; LIVE). Not a data feed and not a government API — hard connectors remain <span class="st st-gap">GAP</span>. claim &le; proof.</div>';
+    }
+    sec.appendChild(panel);
+  }
+
+  fetch(ENDPOINT,{cache:'no-store'})
+    .then(function(r){return r.ok?r.json():null;})
+    .then(render)
+    .catch(function(){render(null);});
+})();
+</script>
+</body>
+</html>
