@@ -138,6 +138,12 @@ The endpoint response shapes are documented in a comment directly above each scr
 ## Rules an instance must follow
 
 - **Prefix every file with `<cc>-`.** No `cc-*` and no un-prefixed page in an instance repo.
+  - **Known exception — do not copy it.** The Poland reference instance
+    (`k0nsult-country-pl`) predates this rule and ships its surfaces as `ai-truth-*`,
+    not `pl-*`. It is kept that way because its filenames are already referenced by
+    published routes; renaming them would break live links. Read it as a **content**
+    reference, not a **naming** reference. A new instance that copies its filenames
+    would violate this rule on day one — raised by external review (round 2).
 - **Bilingual pairs**: a ranking page ships a national-language page and an `-en` twin with
   identical data. Diverging rows between twins is a defect.
 - **One surface per real institution.** If the target has no equivalent of a reference institution,
